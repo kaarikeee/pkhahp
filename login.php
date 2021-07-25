@@ -9,8 +9,13 @@ if($_POST){
 	include_once 'includes/login.inc.php';
 	$login = new Login($db);
 
-	$login->userid = $_POST['username'];
-	$login->passid = md5($_POST['password']);
+
+
+	$login->userid = "".$_POST['username'];
+	$login->passid = "".md5($_POST['password']);
+
+	// echo $login->passid;
+
 	
 	if($login->login()){
 		echo "<script>location.href='index.php'</script>";

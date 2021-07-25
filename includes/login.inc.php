@@ -5,8 +5,8 @@ class Login
     private $table_name = "ahp_pengguna";
     
     public $user;
-    public $userid;
-    public $passid;
+    public $userid = "";
+    public $passid = "";
 
     public function __construct($db){
         $this->conn = $db;
@@ -14,6 +14,7 @@ class Login
 
     public function login()
     {
+        // echo "".$this->userid.$this->passid;
         $user = $this->checkCredentials();
         if ($user) {
             $this->user = $user;
